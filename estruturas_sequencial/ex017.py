@@ -4,20 +4,19 @@
 # - comprar apenas galões de 3,6 litros;
 # - misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
 
-from math import ceil, floor
+from math import ceil
 
 tamanho_m2 = int(input('Quantos metros quadrados tem a área? '))
 
-litros = ceil(tamanho_m2 / 6)
+litros = ceil(tamanho_m2 / 6 )
 latas = ceil(litros / 18)
-preco1 = latas * 80
+preco1 = ceil(latas * 80)
 
 
 galoes = ceil(litros / 3.6)
-preco2 = galoes * 25
+preco2 = ceil(galoes * 25)
 
-litros_resto = floor(tamanho_m2 / 6)
 
-print('Voce gastara {}L de tinta, tera que comprar {} latas e gastará R${:.2f} se comprar latas de 18 litros'.format(litros, latas, preco1))
-print('Voce gastara {}L de tinta, tera que comprar {} galões e gastará R${:.2f} se comprar galões de 18 litros'.format(litros, galoes, preco2))
+print('Voce gastara {}L de tinta, tera que comprar {} latas e gastará R${:.2f} se comprar latas de 18 litros'.format(ceil(litros), ceil(latas), ceil(preco1)))
+print('Voce gastara {}L de tinta, tera que comprar {} galões e gastará R${:.2f} se comprar galões de 3,6 litros'.format(litros, galoes, preco2))
 print('Voce utilizara {} galões e {} latas e gastará R${:.2f} com sobra de 10%'.format())
