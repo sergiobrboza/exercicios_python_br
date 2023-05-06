@@ -8,7 +8,7 @@ from math import ceil
 
 tamanho_m2 = int(input('Quantos metros quadrados tem a área? '))
 
-litros = ceil(tamanho_m2 / 6 )
+litros = ceil(tamanho_m2 / 6 * 1.1 )
 latas = ceil(litros / 18)
 preco1 = ceil(latas * 80)
 
@@ -17,6 +17,14 @@ galoes = ceil(litros / 3.6)
 preco2 = ceil(galoes * 25)
 
 
-print('Voce gastara {}L de tinta, tera que comprar {} latas e gastará R${:.2f} se comprar latas de 18 litros'.format(ceil(litros), ceil(latas), ceil(preco1)))
+latas_misturadas = int(litros / 18)
+sobra = litros % 18
+if sobra > 0:
+    galoes_misturados = ceil(sobra / 3.6)
+
+
+preco_misturado = latas_misturadas * 80 + galoes_misturados * 25
+
+print('Voce gastara {}L de tinta, tera que comprar {} latas e gastará R${:.2f} se comprar latas de 18 litros'.format(litros, latas, preco1))
 print('Voce gastara {}L de tinta, tera que comprar {} galões e gastará R${:.2f} se comprar galões de 3,6 litros'.format(litros, galoes, preco2))
-print('Voce utilizara {} galões e {} latas e gastará R${:.2f} com sobra de 10%'.format())
+print('Voce gastará {}L de tinta, tera que comprar {} galões e {} latas, gastará R${:.2f} com sobra de +10%'.format(litros, galoes_misturados, latas_misturadas, preco_misturado ))
