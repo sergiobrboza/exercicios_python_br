@@ -4,3 +4,7 @@
 # 5 X 2 = 10
 # ...
 # 5 X 10 = 50
+num = int(input('Informe a tabuada de qual numero deseja ver: '))
+for tabuada in range(1, 11):
+    calculo = num * tabuada
+    print(num, 'X', tabuada,'=', calculo)
