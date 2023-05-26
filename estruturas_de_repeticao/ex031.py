@@ -7,3 +7,20 @@
 # Dinheiro: R$ 20.00
 # Troco: R$ 11.00
 # ...
+def caixa_registradora():
+    while True:
+        print('----Lojas Tabajara----')
+        total = 0
+        contador = 1
+        while True:
+            valor = float(input('Digite o valor do produto {}: R$'.format(contador)))
+            total += valor
+            contador += 1
+            if valor == 0:
+                print('Total: R$ {:.2f}'.format(total))
+                pagamento = int(input('dinheiro: R$'))
+                troco = pagamento - total
+                print('Troco: R$ {:.2f}'.format(troco))
+                break
+        break
+caixa_registradora()

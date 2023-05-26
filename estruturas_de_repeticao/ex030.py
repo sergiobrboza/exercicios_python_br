@@ -5,3 +5,8 @@
 # 2 - R$ 0.36
 # ...
 # 50 - R$ 9.00
+paes = valor = 0
+for tabuada in range(1, 51):
+    paes += 1
+    valor += 0.18
+    print('{:.0f} - {:.2f}'.format(paes, valor))

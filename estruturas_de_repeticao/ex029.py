@@ -4,3 +4,8 @@
 # 2 - R$ 3.98
 # ...
 # 50 - R$ 99.50
+item = valor = 0
+for tabuada in range(1, 51):
+    item += 1
+    valor += 1.99
+    print('{:.0f} - {:.2f}'.format(item, valor))
