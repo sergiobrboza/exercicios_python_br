@@ -9,3 +9,9 @@
 # 5 X 6 = 30
 # 5 X 7 = 35
 # Obs: Você deve verificar se o usuário não digitou o final menor que o inicial.
+num = int(input('Informe a tabuada de qual numero deseja ver: '))
+inicio = int(input('Digite de qual número deve iniciar a tabuada: '))
+fim = int(input('Digite qual serar o ultimmo número da tabuada: '))
+for tabuada in range(inicio, fim + 1):
+    calculo = num * tabuada
+    print(num, 'X', tabuada,'=', calculo)
