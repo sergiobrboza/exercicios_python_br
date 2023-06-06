@@ -27,3 +27,36 @@
 # Total gasto com abonos: R$ 1400.00
 # Valor mínimo pago a 3 colaboradores
 # Maior valor de abono pago: R$ 900.00
+valor_minimo_abono = 100
+total_colaboradores = 0
+total_gasto_abonos = 0
+valor_maior_abono = 0
+colaboradores_valor_minimo = 0
+
+salario = float(input("Salário: R$ "))
+
+while salario != 0:
+    abono = salario * 0.2 if salario * 0.2 >= valor_minimo_abono else valor_minimo_abono
+    
+    if abono > valor_maior_abono:
+        valor_maior_abono = abono
+    
+    total_colaboradores += 1
+    total_gasto_abonos += abono
+    
+    if abono == valor_minimo_abono:
+        colaboradores_valor_minimo += 1
+    
+    print(f"Salário: R$ {salario:.2f} - Abono: R$ {abono:.2f}")
+    
+    salario = float(input("Salário: R$ "))
+
+print("\nProjeção de Gastos com Abono")
+print("============================")
+print()
+print("Salário    - Abono")
+print(f"R$ {salario:.2f} - R$ {abono:.2f}")
+print(f"Foram processados {total_colaboradores} colaboradores")
+print(f"Total gasto com abonos: R$ {total_gasto_abonos:.2f}")
+print(f"Valor mínimo pago a {colaboradores_valor_minimo} colaboradores")
+print(f"Maior valor de abono pago: R$ {valor_maior_abono:.2f}")

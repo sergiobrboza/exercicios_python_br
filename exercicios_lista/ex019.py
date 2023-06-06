@@ -22,3 +22,29 @@
 # Total                    8800
 
 # O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 40% dos votos.
+sistemas = [0] * 7
+nomes = [['Windows Server'], ['Unix'], ['Linux'], ['Netware'], ['Mac Os'], ['Outro']] * 7
+
+while True:
+    print('Sistemas Operacionais: \n1- Windows Server \n2-Unix \n3-Linux \n4-Netware \n5-Mac Os \n6-Outro')
+    voto = int(input('Qual o melhor Sistema Operacional para uso em servidores? (Ou 0 para encerrar): '))
+    if voto == 0:
+        break
+    if voto < 1 or voto > 6:
+        print('Voto invalido. Informe um valor de 1 a 6.')
+        continue
+    sistemas[voto] += 1
+total_votos = sum(sistemas)
+print("\nSistema Operacional     Votos   %")
+print("-------------------     -----   ---")
+for i in range(1,7):
+    percentual = (sistemas[i] / total_votos) * 100
+    print(f"{i}-{''.join(map(str,nomes[i]))} {' '*(23-len(str(i)))} {sistemas[i]}   {percentual:.0f}%")
+
+print("-------------------     -----   ---")
+print(f"Total                    {total_votos}\n")   
+vencedor = sistemas.index(max(sistemas[1:]))
+votos_vencedor = sistemas[vencedor]
+percentual_vencedor = (votos_vencedor / total_votos) * 100
+
+print(f"O Sistema Operacional mais votado foi o {vencedor}, com {votos_vencedor} votos, correspondendo a {percentual_vencedor:.0f}% dos votos.") 

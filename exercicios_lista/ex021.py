@@ -26,3 +26,25 @@
 #  4 - vectra          -    9.0 -  111.1 litros - R$ 250.00
 #  5 - peugeout        -   14.5 -   69.0 litros - R$ 155.17
 # O menor consumo é do peugeout.
+modelos = ["Fusca", "Gol", "Uno", "Vectra", "Peugeout"]
+consumo = [7, 10, 12.5, 9, 14.5]
+
+litros_1000km = [1000 / km for km in consumo]
+preco_gasolina = 2.25
+custo_1000km = [litros * preco_gasolina for litros in litros_1000km]
+
+indice_menor_consumo = consumo.index(min(consumo))
+
+print("Comparativo de Consumo de Combustível\n")
+
+for i in range(len(modelos)):
+    print(f"Veículo {i+1}")
+    print(f"Nome: {modelos[i]}")
+    print(f"Km por litro: {consumo[i]}")
+    print()
+
+print("Relatório Final")
+for i in range(len(modelos)):
+    print(f"{i+1} - {modelos[i]} - {consumo[i]:4.1f} - {litros_1000km[i]:6.1f} litros - R$ {custo_1000km[i]:.2f}")
+
+print(f"\nO menor consumo é do {modelos[indice_menor_consumo]}.")

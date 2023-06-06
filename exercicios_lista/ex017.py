@@ -11,3 +11,17 @@
 # Atleta: Rodrigo Curvêllo
 # Saltos: 6.5 - 6.1 - 6.2 - 5.4 - 5.3
 # Média dos saltos: 5.9 m
+saltos = []
+while True:
+    nome = input('Digite o nome do atleta, O programa para caso digite nada: ')
+    if nome == '':
+        break
+    for s in range(1,6):
+        salt = float(input(f'{s}° Salto:'))
+        saltos.append(salt)
+    media = sum(saltos) / 5
+    print('-=' * 30)
+    print('Resultado Final:')
+    print('Atleta:', nome)
+    print('Saltos:', ' - '.join(map(str,saltos)))
+    print('Média dos Saltos:', media, 'm\n')
