@@ -6,3 +6,10 @@
 # A
 # N
 # O
+
+def vertical_name(Name):
+    for letter in Name:
+        print(letter)
+
+name_user = input('Digite seu nome: ')
+vertical_name(name_user.upper())

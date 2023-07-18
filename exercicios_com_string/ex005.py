@@ -6,3 +6,10 @@
 # FUL
 # FU
 # F
+def vertical_name_ladder(Name):
+    tamanho = len(Name)
+    for i in range(tamanho, 0, -1):
+        print(Name[:i])
+
+user_name = input("Digite seu nome: ")
+vertical_name_ladder(user_name)
