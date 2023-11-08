@@ -1,21 +1,14 @@
 # 7.Faça um Programa que leia três números e mostre o maior e o menor deles.
+numeros = {}
 
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-num3 = float(input("Digite o terceiro número: "))
+for indice in range(3):
+    num = float(input('Digite o número: '))
+    numeros[indice] = num
 
-maior = num1
-menor = num1
+id_menor = min(numeros, key=numeros.get)
+menor_num = numeros[id_menor]
 
-if num2 > maior:
-    maior = num2
-if num3 > maior:
-    maior = num3
-
-if num2 < menor:
-    menor = num2
-if num3 < menor:
-    menor = num3
-
-print("O maior número é:", maior)
-print("O menor número é:", menor)
+id_maior = max(numeros, key=numeros.get)
+maior_num = numeros[id_maior]
+    
+print(f'O maior número é o {maior_num} e o menor número é o {menor_num}')

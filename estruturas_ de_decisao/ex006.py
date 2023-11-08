@@ -1,15 +1,12 @@
 # 6.Faça um Programa que leia três números e mostre o maior deles.
 
-num1 = float(input("Digite o primeiro número: "))
-num2 = float(input("Digite o segundo número: "))
-num3 = float(input("Digite o terceiro número: "))
+numeros = {}
 
-maior = num1
-menor = num1
+for indice in range(3):
+    num = float(input('Digite o número: '))
+    numeros[indice] = num
 
-if num2 > maior:
-    maior = num2
-if num3 > maior:
-    maior = num3
+maior = max(numeros)
 
-print('O maior deles é o numero',maior)
+    
+print(f'O maior número é o {maior}')

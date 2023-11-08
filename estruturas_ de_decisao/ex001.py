@@ -1,12 +1,9 @@
 # 1.Faça um Programa que peça dois números e imprima o maior deles.
 
-num1 = float(input('Digite um numero: '))
-num2 = float(input('Digite outro numero: '))
+numeros = {}
+for indice in range(1,3):
+    num = float(input(f'Digite o {indice}° número: '))
+    numeros[indice] = num
 
-maior = num1
-
-if num2 > num1:
-    maior = num2
-else:
-    print('Os valores são iguais')
-print('O maior numero é:',maior)
+maior = max(numeros)
+print(f'O maior número é o {maior}')
